@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css" type="text/css">
+	<script src="/jquery/jquery.min.js"></script>
+	<script src="/popper/popper.min.js"></script>
+	<script src="/bootstrapjs/bootstrap.min.js"></script>
+	<title>Ver Cursos</title>
+	<!--<link href="css/style.css" rel="stylesheet" type="text/css"> -->
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/index">JS Partout</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/index">Inicio<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Cursos
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						
+						<a class="dropdown-item" href="/VerCursos">Ver Cursos</a>
+
+						{{#if admin}}
+						<a class="dropdown-item" href="/CursoCreado">Crear cursos</a>
+						{{/if}}
+						
+
+					</div>
+				</li>
+
+				{{#if admin}}
+				<li class="nav-item">
+					<a class="nav-link" href="/VerInscritos">Ver Inscritos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/ListarUsuarios">Usuarios</a>
+				</li>
+				{{else}}
+				{{#if docente}}
+
+				{{else}}
+				<li class="nav-item">
+					<a class="nav-link" href="/Inscripcion">Inscribirse</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/ListarCursosInscrito">Inscrito</a>
+				</li>
+				{{/if}}
+				{{/if}}
+
+				<li class="nav-item">
+					<a class="nav-link" href="/ChatRoom">Chat</a>
+				</li>
+				
+
+				
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown ">
+					<a class="nav-link dropdown-toggle" href="#" id="nombreUsuario" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{{nombre}}
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/Perfil">Perfil</a>
+							<form action="/Salir" method="post" id="logout">
+								<a class="dropdown-item" href="#" onclick="document.getElementById('logout').submit();">Cerrar Sesion</a>
+							</form>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<br/>
+		<br/>
+
+<!--
+	<div class="jumbotron">
+		<div class="container">
+			<header>
+				<h1>Promedio {{estudiante}} </h1>
+			</header>
+		</div>
+	</div> -->
+
+	

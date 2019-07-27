@@ -1,0 +1,47 @@
+{{>header}}
+
+<div class="jumbotron">
+	<div class="container">
+		<header>
+			<h1>Perfil </h1>
+		</header>
+		<img src="data:img/*;base64, {{avatar}}" style="width:20%">
+	</div>
+</div> 
+
+<div class="container">
+	<form action="/Perfil" method="post"  enctype="multipart/form-data">
+		
+		<div class="form-row">
+			<div class="col">
+				<label for="Id">Id</label>
+				<input type="number" class="form-control" placeholder="Id" name="id" value='{{id}}' required disabled>
+				<input type="number" style="visibility:hidden; height:0px" class="form-control" placeholder="Id" name="id" value={{id}} required>
+			</div>
+			<div class="col">
+				<label for="Name">Nombre</label>
+				<input type="text" class="form-control" placeholder="Nombre" name="nombre" value='{{nombre}}' required>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col">
+				<label for="Mode">Telefono</label>
+				<input type="number" class="form-control" placeholder="Telefono" name="telefono" value='{{telefono}}' required>
+			</div>
+			<div class="col">
+				<label for="Price">Email</label>
+				<input type="email" class="form-control" placeholder="Email" name="correo" value='{{email}}' required>
+			</div>
+		</div>
+		<div class="form-row">
+		<div class="col">
+				<label for="Mode">Imagen de perfil</label>
+				<input type="file" class="form-control" name="foto" accept="image/*" >
+			</div>
+		</div>
+		<br/>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+{{>footer}}

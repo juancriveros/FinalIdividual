@@ -1,0 +1,45 @@
+{{>header}}
+
+<div class="jumbotron">
+	<div class="container">
+		<header>
+			<h1>Inscripción </h1>
+			<p> {{error}}</p>
+		</header>
+	</div>
+</div> 
+
+<div class="container">
+	<form action="/EstudianteInscrito" method="post">
+		<div class="form-row">
+			<div class="col">
+				<label for="Id">Id</label>
+				<input type="number" class="form-control" placeholder="Id" name="id" value={{id}} required disabled>
+			</div>
+			<div class="col">
+				<label for="Name">Nombre</label>
+				<input type="text" class="form-control" placeholder="Nombre" name="nombre" value={{nombre}} required disabled>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col">
+				<label for="Mode">Telefono</label>
+				<input type="number" class="form-control" placeholder="Telefono" name="telefono" value={{telefono}} required disabled>
+			</div>
+			<div class="col">
+				<label for="Price">Email</label>
+				<input type="email" class="form-control" placeholder="Email" name="email" value={{email}} required disabled>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col">
+				<label for="State">Curso</label>
+				{{{ListarCursosDropdown activos}}}
+			</div>
+		</div>
+		<br/>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+{{>footer}}

@@ -1,0 +1,25 @@
+{{>header}}
+<style type="text/css">
+.form-dark{
+	color: #fff;
+	background-color: #343a40;
+	height: 50px;
+}
+
+.form-padi{
+	padding-top: 10px;
+}
+</style>
+<div class="jumbotron">
+	<div class="container">
+		<header>
+			<h1>Inscritos por curso</h1>
+			<p> {{msg}}</p>
+		</header>
+	</div>
+</div> 
+
+{{{ListarInscritos cursos usuarios inscritos}}}
+
+
+{{>footer}}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css" type="text/css">
+	<title>JS Partout </title>
+	<!--<link href="css/style.css" rel="stylesheet" type="text/css"> -->
+</head>
+
+<body>
+
+
+<div class="jumbotron">
+	<div class="container">
+		<header>
+			<h1>Registro</h1>
+		</header>
+	</div>
+</div> 
+{{duplicado}}
+<div class="container">
+	<form action="/Registro" method="post" enctype="multipart/form-data">
+		<div class="form-row">
+			<div class="col">
+				<label for="Id">Id</label>
+				<input type="number" class="form-control" placeholder="Id" name="id" required>
+			</div>
+			<div class="col">
+				<label for="Name">Nombre</label>
+				<input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col">
+				<label for="Mode">Telefono</label>
+				<input type="number" class="form-control" placeholder="Telefono" name="telefono" required>
+			</div>
+			<div class="col">
+				<label for="Price">Email</label>
+				<input type="email" class="form-control" placeholder="Email" name="email" required>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col">
+				<label for="Mode">Imagen de perfil</label>
+				<input type="file" class="form-control" name="foto" accept="image/*" required>
+			</div>
+			<div class="col">
+				<label for="Price">Contraseña</label>
+				<input type="password" class="form-control" placeholder="Contraseña" name="password" required>
+			</div>
+		</div>
+		<br/>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+{{>footer}}

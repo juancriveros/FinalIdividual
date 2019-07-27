@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css" type="text/css">
+	<title>JS Partout </title>
+	<!--<link href="css/style.css" rel="stylesheet" type="text/css"> -->
+</head>
+
+<body>
+
+
+	<div class="jumbotron">
+		<div class="container">
+			<header>
+				<h1>Login</h1>
+				{{inscrito}}
+			</header>
+		</div>
+	</div> 
+
+	<div class="container">
+		<form action="/Login" method="post">
+			<div class="form-row">
+				<div class="col">
+					<label for="Id">Id</label>
+					<input type="number" class="form-control" placeholder="Id" name="id" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col">
+					<label for="password">Contraseña</label>
+					<input type="password" class="form-control" placeholder="Contraseña" name="password" required>
+				</div>
+			</div>
+		</br>
+			<div class="form-row">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
+	</div>
+</br>
+	<p class="text-blue">No has creado tu cuenta? <a href="/Registro">Registrate</a>.</p>
+
+</body>
+
+{{>footer}}

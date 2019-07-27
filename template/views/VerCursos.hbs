@@ -1,0 +1,68 @@
+{{>header}}
+
+<style type="text/css">
+.form-dark{
+	color: #fff;
+	background-color: #343a40;
+	height: 50px;
+}
+
+.form-padi{
+	padding-top: 10px;
+}
+</style>
+
+<div class="jumbotron">
+	<div class="container">
+		<header>
+			<h1>Como {{Rol}}</h1>
+			<p>{{CursoCreado}} </p>
+		</header>
+	</div>
+</div> 
+
+{{#if docente}}
+
+{{{ListaCursosDocente cursos usuarios inscritos cursosDocente}}}
+
+{{else}}
+
+{{{ListarCursos cursos admin}}}
+
+{{/if}}
+
+{{#if admin}}
+<div style="padding:4%;">
+	<form action="/ActualizarEstado" method="post">
+		<div class="form-row" style="align-items: center;text-align: center;">
+			<div class="col-4">
+				<label for="Id">Curso</label>
+			</div>
+			<div class="col-4">
+				{{{ListarCursosDropdown activos}}}
+			</div>
+		</div>
+
+		<div class="form-row" style="align-items: center;text-align: center;">
+			<div class="col-4">
+				<label for="Id">Docente</label>
+			</div>
+			<div class="col-4">
+				{{{ListarDocentes docentes}}}
+			</div>
+		</div>
+
+		<div class="form-row" style="align-items: center;text-align: center;">
+			<div class="col">
+				<button type="submit" class="btn btn-primary">Actualizar</button>
+			</div>
+		</div>
+
+	</form>
+</div>
+{{/if}}
+
+
+
+
+{{>footer}}
