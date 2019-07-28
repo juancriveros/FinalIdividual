@@ -1,4 +1,5 @@
 {{>header}}
+
 <style type="text/css">
 .form-dark{
 	color: #fff;
@@ -10,19 +11,15 @@
 	padding-top: 10px;
 }
 </style>
+
 <div class="jumbotron">
 	<div class="container">
 		<header>
-			<h1>Cursos Inscrito</h1>
-			<p> {{msg}}</p>
+			<h1>{{curso.nombre}}</h1>
 		</header>
 	</div>
 </div> 
 
-{{{ListarCursosInscrito cursos cursosInscrito}}}
-
-
-{{{ListarCursosInscritoCerrados cursos cursosInscrito}}}
 
 
 {{>footer}}

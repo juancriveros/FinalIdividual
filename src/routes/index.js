@@ -474,12 +474,13 @@ app.get('/ListarCursosInscrito', (req, res) => {
 			});
 		}
 
-		Curso.find({estado : 'Disponible'}, (err,resultCursos) => {
+		Curso.find({}, (err,resultCursos) => {
 			if(err){
 				return res.render('ListarCursosInscrito', {
 					msg: err
 				});
 			}
+
 
 			res.render('ListarCursosInscrito', {
 				cursos : resultCursos,

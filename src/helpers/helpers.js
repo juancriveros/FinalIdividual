@@ -122,7 +122,7 @@ hbs.registerHelper('ListarCursosInscrito', (cursos, cursosInscrito) => {
 	</div>
 	</div>`;
 	cursosInscrito.forEach(inscrito => {
-		let curso = cursos.filter(x => x.identificador == inscrito.curso)
+		let curso = cursos.filter(x => x.identificador == inscrito.curso && x.estado == 'Disponible')
 		if(curso.length > 0){
 			texto = texto + ` <form action="/EliminarInscrito" method="post"> 
 			<div class="form-row" style="padding-top: 10px;">
@@ -141,6 +141,51 @@ hbs.registerHelper('ListarCursosInscrito', (cursos, cursosInscrito) => {
 			</div>
 			</div>
 			</form>
+			`;
+			j = j+1;
+		}
+	});
+	texto = texto + '</div>';
+	return texto;
+})
+
+hbs.registerHelper('ListarCursosInscritoCerrados', (cursos, cursosInscrito) => {
+
+	j=1;
+	let texto = `<div class="form-row form-dark">
+	<div class="col">
+	<label>Id</label>
+	</div>
+	<div class="col">
+	<label>Nombre</label>
+	</div>
+	<div class="col">
+	<label>Valor</label>
+	</div>
+	<div class="col">
+	<label>Info</label>
+	</div>
+	</div>`;
+	cursosInscrito.forEach(inscrito => {
+		let curso = cursos.filter(x => x.identificador == inscrito.curso && x.estado == 'Cerrado')
+		if(curso.length > 0){
+			texto = texto + ` 
+			<div class="form-row" style="padding-top: 10px;">
+			<div class="col">
+			<label>${curso[0].identificador}</label>
+			<input style="visibility:hidden" type="number" class="form-control" name="cursoId" value="${curso[0].identificador}">
+			</div>
+			<div class="col">
+			<label for="Id">${curso[0].nombre}</label>
+			</div>
+			<div class="col">
+			<label for="Id">${curso[0].valor}</label>
+			</div>
+			<div class="col">
+			<a class="btn btn-primary href="/InfoCurso?cursoid=${curso[0].identificador}">Ver mas</button>
+			</div>
+			</div>
+			
 			`;
 			j = j+1;
 		}
